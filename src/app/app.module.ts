@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TablesComponent } from './tables/tables.component';
+import { ChartsModule } from './charts/charts.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TablesComponent } from './tables/tables.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
