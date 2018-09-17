@@ -4,6 +4,7 @@ import { fallbackRoute } from './fallbackRoute';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TablesComponent } from './tables/tables.component';
 import { FlotComponent } from './charts/flot/flot.component';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'tables', component: TablesComponent },
+  { path: 'forms', component: FormsComponent },
   fallbackRoute
 ];
 
