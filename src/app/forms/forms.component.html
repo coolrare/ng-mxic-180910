@@ -16,7 +16,15 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-6">
-              <form role="form">
+              <form role="form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+                <pre>屬性清單:
+form.value = {{form.value|json}}
+form.valid = {{form.valid}}
+form.invalid = {{form.invalid}}
+form.dirty = {{form.dirty}}
+form.pristine = {{form.pristine}}
+form.touched = {{form.touched}}
+form.untouched = {{form.untouched}}</pre>
                 <div class="form-group" [class.has-error]="tName.dirty && tName.invalid">
                   <label>姓名</label>
                   <input class="form-control" name="name" [(ngModel)]="data.name" required minlength="3" #tName="ngModel">
