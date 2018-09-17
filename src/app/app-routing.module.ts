@@ -9,10 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'charts',
-    children: [
-      { path: '', redirectTo: 'flot', pathMatch: 'full' },
-      { path: 'flot', component: FlotComponent },
-    ]
+    loadChildren: './charts/charts.module#ChartsModule'
   },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'tables', component: TablesComponent },
