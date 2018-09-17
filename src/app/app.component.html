@@ -6,8 +6,9 @@
 </div>
 
 <ol>
-  <li><a routerLink="/page1">Page1</a></li>
-  <li><a routerLink="/page2">Page2</a></li>
+  <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
+  <li><a routerLinkActive="active" routerLink="/page1">Page1</a></li>
+  <li><a routerLinkActive="active" routerLink="/page2">Page2</a></li>
 </ol>
 
 <router-outlet></router-outlet>
