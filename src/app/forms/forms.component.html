@@ -17,14 +17,23 @@
           <div class="row">
             <div class="col-lg-6">
               <form role="form">
-                <div class="form-group">
+                <div class="form-group" [class.has-error]="tName.dirty && tName.invalid">
                   <label>姓名</label>
-                  <input class="form-control" name="name" [(ngModel)]="data.name">
-                  <p class="help-block">Example block-level help text here.</p>
+                  <input class="form-control" name="name" [(ngModel)]="data.name" required minlength="3" #tName="ngModel">
+                  <p class="help-block" *ngIf="tName.dirty && tName['errors']?.required">請輸入姓名</p>
+                  <p class="help-block" *ngIf="tName.dirty && tName['errors']?.minlength">請輸入至少 {{tName['errors']?.minlength.requiredLength}} 個字元</p>
+                  <p class="help-block">
+                    {{ tName.errors | json }}
+                  </p>
                 </div>
-                <div class="form-group">
+                <div class="form-group" [class.has-error]="tTel.dirty && tTel.invalid">
                   <label>電話</label>
-                  <input class="form-control" placeholder="請輸入電話" name="tel" [(ngModel)]="data.tel">
+                  <input class="form-control" name="tel" [(ngModel)]="data.tel" required minlength="10" #tTel="ngModel">
+                  <p class="help-block" *ngIf="tTel.dirty && tTel['errors']?.required">請輸入電話</p>
+                  <p class="help-block" *ngIf="tTel.dirty && tTel['errors']?.minlength">請輸入至少 {{tTel['errors']?.minlength.requiredLength}} 個字元</p>
+                  <p class="help-block">
+                    {{ tTel.errors | json }}
+                  </p>
                 </div>
                 <div class="form-group">
                   <label>Static Control</label>
