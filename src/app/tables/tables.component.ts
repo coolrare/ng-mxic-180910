@@ -10,6 +10,13 @@ export class TablesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    $(document).ready(function () {
+      $('#dataTables-example').DataTable({
+        responsive: true
+      });
+    });
+
   }
 
 }
